@@ -10,17 +10,22 @@ class NotesProvider with ChangeNotifier {
 
   NotesProvider(){
     fetchNotes();
-    notifyListeners();
+  }
+
+  void sortNotes(){
+    notes.sort((a, b) => b.dateAdded!.compareTo(a.dateAdded!));
   }
 
   void fetchNotes() async{
-    List<Note> fetchedNotes = await ApiService.fetchNotes("piyush@gmail.com");
+    notes = await ApiService.fetchNotes("piyush@gmail.com");
     isLoading = false;
+    sortNotes();
     notifyListeners();
   }
 
   void addNote(Note note){
     notes.add(note);
+    sortNotes();
     notifyListeners();
     ApiService.addNote(note);
   }
@@ -28,6 +33,7 @@ class NotesProvider with ChangeNotifier {
   void updateNote(Note note){
     int indexOfNote = notes.indexOf(notes.firstWhere((element) => element.id == note.id));
     notes[indexOfNote] = note;
+    sortNotes();
     notifyListeners();
     ApiService.updateNote(note);
   }
@@ -35,6 +41,7 @@ class NotesProvider with ChangeNotifier {
   void deleteNote(Note note){
     int indexOfNote = notes.indexOf(notes.firstWhere((element) => element.id == note.id));
     notes.removeAt(indexOfNote);
+    sortNotes();
     notifyListeners();
     ApiService.deleteNote(note);
   }

@@ -6,13 +6,13 @@ import 'package:http/http.dart' as http;
 class ApiService {
   static final String _baseUrl = "https://notes-app-backend-0fmm.onrender.com/notes";
 
-  static Future<List<Note>> fetchNotes (String userId) async {
+  static Future<List<Note>> fetchNotes(String userId) async {
     Uri requestUri = Uri.parse("$_baseUrl/list");
-    var response = await http.post(requestUri, body: { "userId" : userId});
+    var response = await http.post(requestUri, body: { "userId": userId });
     var decoded = jsonDecode(response.body);
     log(decoded.toString());
     List<Note> notes = [];
-    for(var noteMap in decoded){
+    for(var noteMap in decoded) {
       Note newNote = Note.fromMap(noteMap);
       notes.add(newNote);
     }

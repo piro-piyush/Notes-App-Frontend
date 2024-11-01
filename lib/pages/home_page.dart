@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: notesProvider.isLoading == true? SafeArea(child:(notesProvider.notes.isEmpty)? Center(
+      body: notesProvider.isLoading == false? SafeArea(child:(notesProvider.notes.isEmpty)? Center(
           child: Text("No notes yet")): GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           itemCount: notesProvider.notes.length,
           itemBuilder: (context, index){
