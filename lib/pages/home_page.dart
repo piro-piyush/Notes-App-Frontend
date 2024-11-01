@@ -24,8 +24,8 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: SafeArea(child:(notesProvider.notes.isEmpty)? Center(
-          child: Text("No notes yet")):GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+      body: notesProvider.isLoading == true? SafeArea(child:(notesProvider.notes.isEmpty)? Center(
+          child: Text("No notes yet")): GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           itemCount: notesProvider.notes.length,
           itemBuilder: (context, index){
             Note currentNote = notesProvider.notes[index];
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             );
-          })),
+          })):Center(child: CircularProgressIndicator()),
       floatingActionButton: FloatingActionButton(onPressed: (){
         Navigator.push(context, CupertinoPageRoute(
             fullscreenDialog: true,
