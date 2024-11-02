@@ -43,12 +43,12 @@ lib/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/piro-piyush/Notes-App-Frontend.git
+   git clone https://github.com/username/flutter_notes_app.git
    ```
    
 2. Navigate to the project directory:
    ```bash
-   cd Notes-App-Frontend
+   cd flutter_notes_app
    ```
 
 3. Install the dependencies:
@@ -60,6 +60,22 @@ lib/
    ```bash
    flutter run
    ```
+
+## Screenshots
+
+Here are some screenshots of the app:
+
+### Screen Recording
+![Demo](demo/demo.gif)
+
+### Home Screen
+![Home Screen](demo/homen.png)
+
+### Add New Note
+![Add New Note](demo/add_new_note.png)
+
+### Search
+![Search](demo/search.png)
 
 ## Usage
 
