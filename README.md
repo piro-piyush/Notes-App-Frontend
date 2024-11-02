@@ -69,7 +69,7 @@ Here are some screenshots of the app:
 ![Demo](demo/demo.gif)
 
 ### Home Screen
-![Home Screen](demo/homen.png)
+![Home Screen](demo/home.png)
 
 ### Add New Note
 ![Add New Note](demo/add_new_note.png)
