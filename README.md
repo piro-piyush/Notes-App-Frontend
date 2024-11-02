@@ -66,16 +66,25 @@ lib/
 Here are some screenshots of the app:
 
 ### Screen Recording
-![Demo](demo/demo.gif)
+<p align="center">
+  <img src="demo/demo.gif" width="400"/>
+</p>
 
 ### Home Screen
-![Home Screen](demo/home.png)
+<p align="center">
+  <img src="demo/home.png" width="400"/>
+</p>
 
 ### Add New Note
-![Add New Note](demo/add_new_note.png)
+<p align="center">
+  <img src="demo/add_new_note.png" width="400"/>
+</p>
 
 ### Search
-![Search](demo/search.png)
+<p align="center">
+  <img src="demo/search.png" width="400"/>
+</p>
+
 
 ## Usage
 
