@@ -45,7 +45,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              (notesProvider.getFilteredNotes(searchQuery).length > 0) ?GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              (notesProvider.getFilteredNotes(searchQuery).isNotEmpty) ?GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
                   itemCount: notesProvider.getFilteredNotes(searchQuery).length,
                   itemBuilder: (context, index) {
                   Note currentNote = notesProvider.getFilteredNotes(searchQuery)[index];
